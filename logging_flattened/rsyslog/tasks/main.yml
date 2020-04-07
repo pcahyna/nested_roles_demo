@@ -1,0 +1,11 @@
+- name: debug __internal_var
+  debug:
+    var: __internal_var
+
+- name: debug parent roles
+  debug:
+    msg: "{{ ansible_parent_role_names }}"
+
+- name: Run deploy input sub-roles configs
+  include_role:
+    name: "basics"

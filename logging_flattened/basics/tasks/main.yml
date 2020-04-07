@@ -1,0 +1,13 @@
+---
+- name: debug __internal_var
+  debug:
+    var: __internal_var
+
+- name: debug parent roles
+  debug:
+    msg: "{{ ansible_parent_role_names }}"
+
+- name: Install/Update basics role packages and generate example configuration files to role subdir
+  include_role:
+    name: "rsyslog"
+    tasks_from: deploy.yml

@@ -1,0 +1,5 @@
+---
+- vars:
+    __internal_var: "{{ external_var }}"
+  include_role:
+    name: "{{ role_path }}/roles/rsyslog"
