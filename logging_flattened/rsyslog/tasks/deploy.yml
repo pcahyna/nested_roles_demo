@@ -6,3 +6,7 @@
 - name: debug parent roles
   debug:
     msg: "{{ ansible_parent_role_names }}"
+
+- name: debug __internal_var
+  debug:
+    msg: "{{ __internal_var }}"
