@@ -1,0 +1,12 @@
+This aims to show that variables can be lost with recursive role calls.
+
+To see the problem, run
+  ansible-playbook testplaybook.yml
+in the root directory or in logging_flattened.
+The result should be the same. This shows that the problem is not in 
+nesting of subroles (lexical nesting) but in nested role calls with
+recursion (dynamic nesting), because the roles in logging_flattened do
+not have a nested structure of subroles and still show the problem.
+
+The dynamic call chain is: logging -> rsyslog -> basics -> rsyslog.
+The problem is the last step.
